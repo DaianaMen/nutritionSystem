@@ -1,0 +1,34 @@
+<a routerLink="/components/dieta/cadastrar">
+    
+    Nova Dieta
+  </a>
+<table>
+    <thead>
+        <tr>
+            <th>#ID</th>
+            <th>Descrição</th>
+            <th>Data Inicio</th>
+            <th>Data Final</th>
+            <th>Criado em</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dieta of dietas">
+            <td>
+                {{dieta._id}}
+            </td>
+            <td>
+                {{dieta.descricao}}
+            </td>
+            <td>
+                {{dieta.data_inicio | date: "MMMM/yyyy" }}
+            </td>
+            <td>
+                {{dieta.data_fim | date: "MMMM/yyyy" }}
+            </td>
+            <td>
+                {{ dieta.createdAt | date: "dd/MM/yyyy HH:mm:ss" }}
+              </td>
+        </tr>
+    </tbody>
+</table>

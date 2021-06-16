@@ -1,0 +1,14 @@
+<p>cadastrar</p>
+
+<label for="descricao">Descrição</label>
+<input type="text" name="descricao" [(ngModel)]="dieta.descricao"/>
+<label for="data_inicio">Data inicio</label>
+<input type="text" name="data_inicio" [(ngModel)]="dieta.data_inicio"/>
+<label for="data_fim">Data Final</label>
+<input type="text" name="data_fim" [(ngModel)]="dieta.data_fim"/>
+
+<br/>
+<button (click)="cadastrar()">Cadastrar</button>
+
+<br/>
+<a routerLink=""> Listar Dietas</a>
