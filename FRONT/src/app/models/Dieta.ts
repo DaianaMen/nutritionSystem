@@ -8,7 +8,7 @@ export class Dieta {
     //? diz q é opcional
     //usuario!: ver como fazer relacionamento ; 
     //refeicao array!: ver como fazer relacionamento ;
-    usuario!; Usuario;
+
     createdAt?: Date;
     updatedAt?: Date;
     
