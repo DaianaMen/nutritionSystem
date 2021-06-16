@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "JedaiNutri is an app that will help you with your diet by:\r - tracking your meals\r - building your groceries list based on your weekly plan",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules ./src/app",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaianaMen/JedaiNutri.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaianaMen/JedaiNutri/issues"
+  },
+  "homepage": "https://github.com/DaianaMen/JedaiNutri#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.12",
+    "@types/mongoose": "^5.11.97"
+  },
+  "keywords": []
+}
