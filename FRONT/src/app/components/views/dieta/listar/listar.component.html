@@ -1,34 +1,30 @@
-<a routerLink="/components/dieta/cadastrar">
-    
-    Nova Dieta
-  </a>
-<table>
-    <thead>
-        <tr>
-            <th>#ID</th>
-            <th>Descrição</th>
-            <th>Data Inicio</th>
-            <th>Data Final</th>
-            <th>Criado em</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let dieta of dietas">
-            <td>
-                {{dieta._id}}
-            </td>
-            <td>
-                {{dieta.descricao}}
-            </td>
-            <td>
-                {{dieta.data_inicio | date: "MMMM/yyyy" }}
-            </td>
-            <td>
-                {{dieta.data_fim | date: "MMMM/yyyy" }}
-            </td>
-            <td>
-                {{ dieta.createdAt | date: "dd/MM/yyyy HH:mm:ss" }}
-              </td>
-        </tr>
-    </tbody>
+<a mat-raised-button color="warn" routerLink="/components/dieta/cadastrar">
+  <mat-icon>event</mat-icon>
+  Nova Dieta
+</a>
+
+<table mat-table [dataSource]="dietas" class="mat-elevation-z8">
+  
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> # </th>
+    <td mat-cell *matCellDef="let dieta"> {{dieta._id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="descricao">
+    <th mat-header-cell *matHeaderCellDef> # </th>
+    <td mat-cell *matCellDef="let dieta"> {{dieta.descricao}} </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="data_inicio">
+    <th mat-header-cell *matHeaderCellDef> Data Inicio </th>
+    <td mat-cell *matCellDef="let dieta"> {{ dieta.data_inicio | date: "MMMM - yyyy" }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="data_fim">
+    <th mat-header-cell *matHeaderCellDef> Data Fim </th>
+    <td mat-cell *matCellDef="let dieta"> {{ dieta.data_fim | date: "MMMM - yyyy" }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

@@ -6,23 +6,31 @@ const usuarioSchema = new Schema(
             type: String,
             required: [true, "O campo NOME é obrigatório!"],
         },
-        email: {
+       /* email: {
             type: String,
             required: [true, "O campo EMAIL é obrigatório!"],
             unique: true
-        },
+        },*/
         data_nascimento: {
             type: Date,
             required: [true, "O campo DATA_NASCIMENTO é obrigatório!"]
         },
-        recomendacao_hidrica: {
+        peso: {
+            type: Number,
+            required: [true, "O campo PESO é obrigatório!"]
+        },
+        altura: {
+            type: Number,
+            required: [true, "O campo ALTURA é obrigatório!"]
+        },
+       /* recomendacao_hidrica: {
             type: String,
             required: [true, "O campo RECOMENDACAO_HIDRICA é obrigatório!"],
-        },
-        dietas: [{
+        },*/
+        /*dietas: [{
             type: Schema.Types.ObjectId,
             ref: "Dieta",
-        }]
+        }]*/
     },
     {
         timestamps: true,

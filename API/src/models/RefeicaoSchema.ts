@@ -11,7 +11,7 @@ const refeicaoSchema = new Schema(
             required: [true, "O campo HORARIO é obrigatório!"]
         },
         refeicao: {
-            type: Date,
+            type: String,
             required: [true, "O campo REFEICAO é obrigatório!"]
         },
         dieta: {

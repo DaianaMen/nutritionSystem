@@ -1,0 +1,17 @@
+mat-card-content{
+    padding: 16px;
+}
+
+.usuario-class{
+    width: 50%;
+    display: block;
+}
+
+mat-grid-tile{
+    width: 100%;
+}
+
+table{
+    margin-top: 16px;
+    width: 100%;
+}

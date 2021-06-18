@@ -1,0 +1,36 @@
+<a mat-raised-button color="warn" routerLink="/usuario/cadastrar-usuario">
+    <mat-icon>event</mat-icon>
+    Novo Usuario
+  </a>
+  
+  <table mat-table [dataSource]="usuarios" class="mat-elevation-z8">
+    
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> # </th>
+      <td mat-cell *matCellDef="let usuario"> {{usuario._id}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.nome }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="peso">
+        <th mat-header-cell *matHeaderCellDef> Peso </th>
+        <td mat-cell *matCellDef="let usuario"> {{ usuario.peso }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="altura">
+        <th mat-header-cell *matHeaderCellDef> Altura </th>
+        <td mat-cell *matCellDef="let usuario"> {{ usuario.altura }} </td>
+      </ng-container>
+    
+    <ng-container matColumnDef="criadoEm">
+      <th mat-header-cell *matHeaderCellDef> Criado em </th>
+      <td mat-cell *matCellDef="let usuario"> {{ usuario.createdAt | date: "dd/MM/yyyy HH:mm:ss" }} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  

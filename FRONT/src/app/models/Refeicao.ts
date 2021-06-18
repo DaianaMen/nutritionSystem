@@ -4,9 +4,6 @@ export class Refeicao {
     _id?: string;
     descricao!: string;
     horario!: string;
-    refeicao!: Date;
+    refeicao!: string;
     //dieta!: ver como fazer relacionamento ;
-    createdAt?: Date;
-    updatedAt?: Date;
-    
 }

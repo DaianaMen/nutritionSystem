@@ -1,14 +1,56 @@
-<p>cadastrar</p>
+<mat-card>
+  <mat-card-title> Nova Dieta </mat-card-title>
+  <mat-card-content>
+    
+    <mat-form-field class="dieta-class">
+      <mat-label for="data">Descrição</mat-label>
+      <input matInput placeholder="Descrição" type="text" name="descricao" [(ngModel)]="descricao" />
+    </mat-form-field>
 
-<label for="descricao">Descrição</label>
-<input type="text" name="descricao" [(ngModel)]="dieta.descricao"/>
-<label for="data_inicio">Data inicio</label>
-<input type="text" name="data_inicio" [(ngModel)]="dieta.data_inicio"/>
-<label for="data_fim">Data Final</label>
-<input type="text" name="data_fim" [(ngModel)]="dieta.data_fim"/>
+    <mat-form-field class="mes">
+      <mat-label for="data_inicio">Data Inicio</mat-label>
+      <input matInput placeholder="Digite Inicio" type="month" name="data_inicio" [(ngModel)]="data_inicio" />
+  </mat-form-field>
 
-<br/>
-<button (click)="cadastrar()">Cadastrar</button>
+    <mat-form-field class="mes">
+      <mat-label for="data_fim">Data Final</mat-label>
+      <input matInput placeholder="Data Final" type="month" name="data_fim" [(ngModel)]="data_fim" />
+    </mat-form-field>
 
-<br/>
-<a routerLink=""> Listar Dietas</a>
+      <div class="refeicao-div">
+        <mat-card>
+          <mat-card-title> Adicionar Refeições </mat-card-title>
+          <mat-card-content>
+            <table>
+            <div class="conteudo-refeicoes">
+              <mat-form-field>
+                <mat-label for="data">Descrição</mat-label>
+                <input matInput placeholder="Descrição" type="text" name="data" [(ngModel)]="descricaoRef" />
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label for="data">Horário</mat-label>
+                <input matInput placeholder="Horário" type="text" name="data" [(ngModel)]="horarioRef" />
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label for="data">Refeição</mat-label>
+                <input matInput placeholder="Refeição" type="text" name="data" [(ngModel)]="refeicaoRef" />
+              </mat-form-field>
+              
+              <button mat-raised-button color="primary" (click)="adicionarRefeicao()">Adicionar Refeição</button>
+            </div>
+
+              <tr mat-header-row *matHeaderRowDef="colunasRefeicao"></tr>
+              <tr mat-row *matRowDef="let row; columns: colunasRefeicao"></tr>
+            </table>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar Dieta</button>
+      <a mat-stroked-button routerLink=""> Listar Dietas </a>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title> Novo Usuario </mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="usuario-class">
+        <mat-label for="nome">Nome</mat-label>
+        <input matInput placeholder="Nome" type="text" name="nome" [(ngModel)]="nome" />
+      </mat-form-field>
+
+      <mat-form-field class="usuario-class">
+        <mat-label for="data_nascimento">Data de nascimento</mat-label>
+        <input matInput placeholder="Data de nascimento" type="month" name="data_nascimento" [(ngModel)]="data_nascimento" />
+      </mat-form-field>
+
+      <mat-form-field class="usuario-class">
+        <mat-label for="peso">Peso</mat-label>
+        <input matInput placeholder="Peso" type="number" name="peso" [(ngModel)]="peso" />
+      </mat-form-field>
+
+      <mat-form-field class="usuario-class">
+        <mat-label for="altura">Altura</mat-label>
+        <input matInput placeholder="Altura" type="number" name="altura" [(ngModel)]="altura" />
+      </mat-form-field>
+  
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="cadastrarUsuario()">Cadastrar</button>
+        <a mat-stroked-button routerLink=""> Usuarios Cadastrados </a>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+  

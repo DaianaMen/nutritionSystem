@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { Dieta } from 'src/app/models/Dieta';
-import { DietaService } from 'src/app/services/dieta.service';
+import { Component, OnInit } from "@angular/core";
+import { MatTableDataSource } from '@angular/material/table';
+import { Dieta } from "src/app/models/Dieta";
+import { DietaService } from "src/app/services/dieta.service";
 
 @Component({
-  selector: 'app-listar',
-  templateUrl: './listar.component.html',
-  styleUrls: ['./listar.component.css']
+  selector: "app-listar",
+  templateUrl: "./listar.component.html",
+  styleUrls: ["./listar.component.css"],
 })
 export class ListarComponent implements OnInit {
-  dietas: Dieta[] = [];
-  constructor(private service: DietaService) { }
+  dietas!: MatTableDataSource<Dieta>;
+  displayedColumns: string[] = ['id', 'descricao', 'data_inicio', 'data_fim'];
 
-  ngOnInit():void {
+  constructor(private service: DietaService) {}
+
+  ngOnInit(): void {
     this.service.listar().subscribe((dietas) => {
-      this.dietas = dietas;
+      this.dietas = new MatTableDataSource<Dieta>(dietas);
     });
   }
 }

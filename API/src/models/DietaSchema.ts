@@ -17,7 +17,7 @@ const dietaSchema = new Schema(
         usuario: {
             type: Schema.Types.ObjectId,
             ref: "Usuario",
-            required: [true, "O campo USUARIO é obrigatório!"],
+            //required: [true, "O campo USUARIO é obrigatório!"],
         },
         refeicoes: [{
             type: Schema.Types.ObjectId,
